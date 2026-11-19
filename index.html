@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARQUIVERSE 2000 · jogos de arquitetura computacional</title>
+  <meta name="description" content="Cruzadinha, quiz e laboratório de portas lógicas para estudar arquitetura computacional.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="floor" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="kao" aria-hidden="true">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</p>
+    <h1>ARQUIVERSE<span>2000</span></h1>
+    <p class="tag">bem-vinda ao cyber lab de arquitetura computacional ✦ 3 jogos para dominar CPU, memórias, barramentos e portas lógicas</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Jogos">
+    <button class="tab" role="tab" aria-selected="true" data-tab="cruz" id="t-cruz">✦ Cruzadinha</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="quiz" id="t-quiz">⚡ Quiz Neon</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="lab" id="t-lab">◈ Lab de Portas</button>
+  </nav>
+
+  <main>
+    <!-- JOGO 1 -->
+    <section class="win" id="cruz" role="tabpanel" aria-labelledby="t-cruz">
+      <div class="bar"><span>cruzadinha.exe</span><i aria-hidden="true"></i></div>
+      <div class="body">
+        <p class="help">Clique numa casa e digite. Clique de novo na mesma casa (ou use as setas) para alternar entre horizontal e vertical.</p>
+        <div class="tools">
+          <button class="btn go" id="conferir">Conferir</button>
+          <button class="btn" id="reiniciar">Reiniciar</button>
+          <output class="score" id="contador" aria-live="polite">0 de 16 palavras</output>
+        </div>
+        <p class="dica" id="dica" aria-live="polite">Escolha uma casa para ver a pista.</p>
+        <p class="msg" id="msg" aria-live="polite"></p>
+        <div class="jogo">
+          <div class="scroll"><div id="board" class="board" aria-label="Tabuleiro da cruzadinha"></div></div>
+          <div class="clues">
+            <h2>Horizontais</h2><ol id="clues-h"></ol>
+            <h2>Verticais</h2><ol id="clues-v"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOGO 2 -->
+    <section class="win" id="quiz" role="tabpanel" aria-labelledby="t-quiz" hidden>
+      <div class="bar"><span>quiz_neon.exe</span><i aria-hidden="true"></i></div>
+      <div class="body" id="quiz-box"></div>
+    </section>
+
+    <!-- JOGO 3 -->
+    <section class="win" id="lab" role="tabpanel" aria-labelledby="t-lab" hidden>
+      <div class="bar"><span>lab_portas.exe</span><i aria-hidden="true"></i></div>
+      <div class="body">
+        <p class="help">Portas lógicas recebem bits (0 ou 1) e devolvem um bit. Ligue e desligue as entradas e veja o que cada porta responde.</p>
+        <div class="switches">
+          <button class="sw" id="swA" aria-pressed="false">A = 0</button>
+          <button class="sw" id="swB" aria-pressed="false">B = 0</button>
+        </div>
+        <div class="gates" id="gates"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2000 ✦ feito com HTML, CSS e JavaScript puros ✦ estudo de arquitetura computacional</footer>
+  <script src="script.js"></script>
+</body>
+</html>
